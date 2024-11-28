@@ -1,4 +1,4 @@
-# MongoDB & Mongoose tutorial
+# MongoDB & Mongoose Tutorial
 
 ## I. MongoDB Introduction
 
