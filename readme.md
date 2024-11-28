@@ -13,7 +13,7 @@ MongoDB is a NoSQL database that stores data in collections of JSON-like documen
 ### A. Installation
 
 To install MongoDB on your system, you can follow the instructions provided on the official MongoDB website. You can download the MongoDB Community Server for free and install it on your system. For example, if you are using Windows, you can find the installation instructions [here](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/). On this page, you can find information on how to download the MongoDB Community Server, install it on your system, and start the MongoDB server.
-![alt text](image.png).
+![alt text](images/image.png).
 
 If you want a playground to test MongoDB queries, you can use https://mongoplayground.net/. It is an online MongoDB shell that allows you to run MongoDB queries and see the results in real-time. You can use it to practice MongoDB queries and learn how to interact with MongoDB.
 
@@ -27,9 +27,9 @@ Once the MongoDB server is running, you can connect to it using the `mongo` shel
 
 ## MongoDB Basics
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 MongoDB stores data in collections, which are similar to tables in relational databases. Each collection contains a set of documents, which are JSON-like objects that store the data. Each document in a collection can have a different structure, allowing you to store data in a flexible way.
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 ## III. CRUD Operations in MongoDB
 
@@ -43,7 +43,7 @@ To insert a document into a collection, you can use the `insertOne` or `insertMa
 db.collection.insertOne({ key: value });
 ```
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 ### B. Querying Data
 
@@ -53,7 +53,7 @@ To query data from a collection, you can use the `find` method. The `find` metho
 db.collection.find({ key: value });
 ```
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 ### C. Updating Data
 
@@ -88,7 +88,7 @@ To delete a document from a collection, you can use the `deleteOne` or `deleteMa
 db.collection.deleteOne({ key: value });
 ```
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 ### Miscellaneous MongoDB Commands
 
@@ -131,10 +131,10 @@ You may test your attempts in:
 I will choose the MongoDB extension in VSCode to answer the questions. Just make sure you install the MongoDB extension in VSCode and connect to your MongoDB server to view and interact with the data.
 
 After opening new VSCode window, click on the MongoDB icon on the left sidebar, then click on the `Connect to MongoDB` button to connect to your MongoDB server. You can then view the databases, collections, and documents in your MongoDB server.
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 If you see the green leaf icon, it means you are connected to the MongoDB server.
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 You will have some databases in your MongoDB server. Expand any database and Right Click on the collection you want to work with and select `View Documents` to see the collections in the database.
 
@@ -242,7 +242,7 @@ db.unicorns.insert({
 Notice that this is not JS code, but MongoDB shell code. You can run this code in the MongoDB shell to insert the unicorns data into a new collection. The VSCode just provides a nice interface to interact with MongoDB.
 
 To Run the code in VSCode, click on the `Run` button on the top right corner of the editor.
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 Oh, I forgot to mention that you need to create a new database called `w12db` before inserting the unicorns data. That is why I used the `use('w12db')` command to switch to the `w12db` database before inserting the unicorns data.
 
@@ -284,7 +284,7 @@ db.unicorns.find({ vampires: { $exists: false } });
 
 The `$exists` operator is used to find documents where the field exists or does not exist in the document.
 
-You should get `x` unicorns for this query.
+You should get unicorns for this query.
 
 **Q3. Find the unicorns that like apples or carrots**
 In a new playground file, write the following
@@ -584,9 +584,9 @@ const unicornSchema = new mongoose.Schema({
 });
 ```
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 ### C. Updating documents
 
@@ -641,7 +641,6 @@ If you think of it, we have just build a simple _Unicorns_ RESTful API. Clients 
 
 HEre is a table a summary of the RESTful API endpoints we have partially built:
 
-
 And here is a table of the RESTful API endpoints we have implemented:
 | Method | Endpoint | Description |
 | --- | --- | --- |
@@ -649,6 +648,7 @@ And here is a table of the RESTful API endpoints we have implemented:
 | POST | /unicorns | Adds a new unicorn. |
 | DELETE | /unicorns/:name | Deletes a unicorn by name. |
 | PATCH | /unicorns/:name | Updates a unicorn by name. It should only update the fields that are passed in the request body. |
+| PUT | /unicorns/:name | Replaces a unicorn by name. It should replace the entire document with the new document passed in the request body. |
 | GET | /unicorns/:name | Returns a unicorn by name. |
 | GET | /unicorns/search?name=... | Returns a unicorn by name. |
 
